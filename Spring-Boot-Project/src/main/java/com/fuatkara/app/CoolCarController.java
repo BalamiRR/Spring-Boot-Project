@@ -1,5 +1,6 @@
 package com.fuatkara.app;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.Collection;
@@ -14,6 +15,7 @@ class CoolCarController {
     }
 
     @GetMapping("/cool-cars")
+    @CrossOrigin(origins = "http://localhost:4200") //Web iicn yani bunu webte kullanamk icin
     public Collection<Car> coolCars() {// Car'in icindeki butun colectionlari dondurur. 
     								  //Returns the number of elements in this collection.
         return repository.findAll().stream()  
@@ -26,10 +28,10 @@ class CoolCarController {
 //    List result = names.stream().filter(s->s.startsWith("S")).collect(Collectors.toList());
 
     private boolean isCool(Car car) {
-        return !car.getName().equals("Fuat") &&
-                !car.getName().equals("Furkan") &&
-                !car.getName().equals("Fatih") &&
-                !car.getName().equals("Mashar");
+        return !car.getName().equals("Kartal") &&
+                !car.getName().equals("Dogan") &&
+                !car.getName().equals("Sahin") &&
+                !car.getName().equals("Opel");
     }
 
 //    private boolean isCool(Car car) {

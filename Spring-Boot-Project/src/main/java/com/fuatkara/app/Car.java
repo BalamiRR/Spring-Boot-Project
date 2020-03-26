@@ -10,10 +10,11 @@ import javax.persistence.Entity;
 //@Data
 //@NoArgsConstructor
 public class Car {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long id;
     private String name;
-    
+
     public Car() {
     	// Ne olursa olsun kullan bunu
     }
